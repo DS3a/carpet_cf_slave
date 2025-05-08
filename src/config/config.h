@@ -102,6 +102,11 @@
 #define CRTP_SRV_TASK_PRI         0
 #define PLATFORM_SRV_TASK_PRI     0
 
+
+// NOTE custom tasks
+#define THRUST_CTRL_TASK_PRI     4
+// #define MASTER_LISTENER_TASK_PRI  4
+
 // Not compiled
 #if 0
   #define INFO_TASK_PRI           2
@@ -162,6 +167,11 @@
 #define FLAPPERDECK_TASK_NAME     "FLAPPERDECK"
 
 
+// NOTE custom tasks
+#define THRUST_CTRL_TASK_NAME    "THRUST_CTRL"
+
+
+
 //Task stack sizes
 #define SYSTEM_TASK_STACKSIZE           (2* configMINIMAL_STACK_SIZE)
 #define LEDSEQCMD_TASK_STACKSIZE        configMINIMAL_STACK_SIZE
@@ -207,6 +217,9 @@
 #define KALMAN_TASK_STACKSIZE           (3 * configMINIMAL_STACK_SIZE)
 #define FLAPPERDECK_TASK_STACKSIZE      (2 * configMINIMAL_STACK_SIZE)
 #define ERROR_UKF_TASK_STACKSIZE        (4 * configMINIMAL_STACK_SIZE)
+
+// NOTE custom tasks
+#define THRUST_CTRL_TASK_STACKSIZE     (2 * configMINIMAL_STACK_SIZE)
 
 //The radio channel. From 0 to 125
 #define RADIO_CHANNEL 80
