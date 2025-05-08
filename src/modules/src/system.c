@@ -186,6 +186,8 @@ void systemTask(void *arg)
   //Init the high-levels modules
   systemInit();
   commInit();
+
+  // NOTE this is also commented out, but we don't know if it's needed
   commanderInit();
 
   StateEstimatorType estimator = StateEstimatorTypeAutoSelect;
@@ -205,6 +207,8 @@ void systemTask(void *arg)
   memInit();
   deckInit();
   estimator = deckGetRequiredEstimator();
+
+  // NOTE this was commented out, but we shall see if it is needed
   stabilizerInit(estimator);
   if (deckGetRequiredLowInterferenceRadioMode() && platformConfigPhysicalLayoutAntennasAreClose())
   {
