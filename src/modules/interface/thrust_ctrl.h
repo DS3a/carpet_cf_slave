@@ -10,3 +10,4 @@ typedef struct {
 void thrustControlTaskInit();
 bool thrustControlTaskTest();
 
+void thrustControlTaskEnqueue(motors_thrust_t *thrusts);
