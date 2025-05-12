@@ -48,6 +48,8 @@ obj-$(CONFIG_DECK_LOCO) += tdoaEngineInstance.o
 obj-y += vcp_esc_passthrough.o
 obj-y += worker.o
 
+obj-y += thrust_ctrl.o
+
 # Sub folders
 obj-$(CONFIG_ESTIMATOR_KALMAN_ENABLE) += kalman_core/
 obj-y += lighthouse/

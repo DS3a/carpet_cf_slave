@@ -77,6 +77,8 @@
   #include "cpxlink.h"
 #endif
 
+#include "thrust_ctrl.h"
+
 /* Private variable */
 static bool selftestPassed;
 static uint8_t dumpAssertInfo = 0;
@@ -158,6 +160,7 @@ bool systemTest()
   pass &= pmTest();
   pass &= workerTest();
   pass &= buzzerTest();
+  pass &= thrustControlTaskTest();
   return pass;
 }
 
@@ -216,6 +219,7 @@ void systemTask(void *arg)
   }
   soundInit();
   crtpMemInit();
+  thrustControlTaskInit();
 
 #ifdef PROXIMITY_ENABLED
   proximityInit();

@@ -15,11 +15,13 @@ STATIC_MEM_QUEUE_ALLOC(motorThrustQueue, 1, sizeof(motors_thrust_t));
 
 static bool isMotorThrustTaskInit = false;
 
+static void thrustControlTask(void *arg);
+STATIC_MEM_TASK_ALLOC(thrustControlTask, THRUST_CTRL_TASK_STACKSIZE);
+
 void thrustControlTaskInit() {
     motorThrustQueue = STATIC_MEM_QUEUE_CREATE(motorThrustQueue);
 
-    //   STATIC_MEM_TASK_CREATE(exampleTask, exampleTask, EXAMPLE_TASK_NAME, NULL, EXAMPLE_TASK_PRI);
-
+    STATIC_MEM_TASK_CREATE(thrustControlTask, thrustControlTask, THRUST_CTRL_TASK_NAME, NULL, THRUST_CTRL_TASK_PRI);
 
     isMotorThrustTaskInit = true;
 }
