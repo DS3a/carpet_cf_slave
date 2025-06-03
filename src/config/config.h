@@ -105,7 +105,7 @@
 
 // NOTE custom tasks
 #define THRUST_CTRL_TASK_PRI     4
-// #define MASTER_LISTENER_TASK_PRI  4
+#define UARRT_LISTENER_TASK_PRI  3
 
 // Not compiled
 #if 0
@@ -169,6 +169,7 @@
 
 // NOTE custom tasks
 #define THRUST_CTRL_TASK_NAME    "THRUST_CTRL"
+#define UART_LISTENER_TASK_NAME  "UART_LISTENER"
 
 
 
@@ -220,6 +221,7 @@
 
 // NOTE custom tasks
 #define THRUST_CTRL_TASK_STACKSIZE     (2 * configMINIMAL_STACK_SIZE)
+#define UART_LISTENER_TASK_STACKSIZE   (2 * configMINIMAL_STACK_SIZE)
 
 //The radio channel. From 0 to 125
 #define RADIO_CHANNEL 80

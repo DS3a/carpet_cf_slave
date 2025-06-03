@@ -78,6 +78,7 @@
 #endif
 
 #include "thrust_ctrl.h"
+#include "uart_listener.h"
 
 /* Private variable */
 static bool selftestPassed;
@@ -160,6 +161,7 @@ bool systemTest()
   pass &= pmTest();
   pass &= workerTest();
   pass &= buzzerTest();
+  pass &= uartTaskTest();
   pass &= thrustControlTaskTest();
   return pass;
 }
@@ -220,6 +222,8 @@ void systemTask(void *arg)
   soundInit();
   crtpMemInit();
   thrustControlTaskInit();
+
+  uartTaskInit();
 
 #ifdef PROXIMITY_ENABLED
   proximityInit();

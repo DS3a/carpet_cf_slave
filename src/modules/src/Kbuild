@@ -49,6 +49,7 @@ obj-y += vcp_esc_passthrough.o
 obj-y += worker.o
 
 obj-y += thrust_ctrl.o
+obj-y += uart_listener.o
 
 # Sub folders
 obj-$(CONFIG_ESTIMATOR_KALMAN_ENABLE) += kalman_core/
